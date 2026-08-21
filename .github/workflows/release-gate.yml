@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: TDS identity: 23f3003934@ds.study.iitm.ac.in
+      - name: "TDS identity: 23f3003934@ds.study.iitm.ac.in"
         run: echo "Identity marker step for TDS GA7 submission"
 
       - name: Install dependencies
