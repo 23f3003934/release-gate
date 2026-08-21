@@ -1,0 +1,30 @@
+name: TDS GA7 Release Gate
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: TDS identity: 23f3003934@ds.study.iitm.ac.in
+        run: echo "Identity marker step for TDS GA7 submission"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run release-gate tests
+        run: npm test
